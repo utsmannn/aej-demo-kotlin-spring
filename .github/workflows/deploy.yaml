@@ -13,10 +13,10 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
+        env:
+          DATABASE_URL: ${{secrets.DATABASE_URL}}
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "demo-aej"
           heroku_email: "kucingapes@gmail.com"
-        env:
-          DATABASE_URL: ${{secrets.DATABASE_URL}}
