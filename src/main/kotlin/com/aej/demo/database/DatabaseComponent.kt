@@ -8,10 +8,5 @@ import org.springframework.stereotype.Component
 class DatabaseComponent {
 
     private val databaseURL = System.getenv("DATABASE_URL")
-
-    init {
-        println("database url ----> $databaseURL")
-    }
-
     val database: MongoClient = KMongo.createClient(databaseURL)
 }
