@@ -13,12 +13,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "demo-aej"
-          heroku_email: "kucingapes@gmail.com"
-          justlogin: true
+#      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+#        with:
+#          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+#          heroku_app_name: "demo-aej"
+#          heroku_email: "kucingapes@gmail.com"
+#          justlogin: true
       - name: Add heroku remote
         run: heroku git:remote --app=demo-aej
       - name: Setup heroku env
