@@ -24,4 +24,6 @@ jobs:
       - name: Setup heroku env
         run: heroku config:set DATABASE_URL=${{secrets.DATABASE_URL}}
       - name: push heroku to master
-        run: git push heroku master
+        run: |
+          git fetch --unshallow origin
+          git push heroku master
