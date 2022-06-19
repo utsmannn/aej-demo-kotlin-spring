@@ -36,7 +36,7 @@ jobs:
       - name: Add heroku remote
         run: heroku git:remote --app=${{secrets.HEROKU_APP_NAME}}
       - name: Setup heroku env
-        run: heroku config:set DATABASE_URL=${{secrets.DATABASE_URL}} --app=${{secrets.HEROKU_APP_NAME}}
+        run: heroku config:set DATABASE_URL=${{secrets.DATABASE_URL}}
       - name: push heroku to master
         run: |
           git fetch --unshallow origin
