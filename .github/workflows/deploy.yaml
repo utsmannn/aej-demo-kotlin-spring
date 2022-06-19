@@ -18,3 +18,5 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "demo-aej"
           heroku_email: "kucingapes@gmail.com"
+        env:
+          DATABASE_URL: ${{secrets.DATABASE_URL}}
