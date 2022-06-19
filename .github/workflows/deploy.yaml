@@ -13,10 +13,15 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '11'
-        env:
-          DATABASE_URL: ${{secrets.DATABASE_URL}}
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "demo-aej"
           heroku_email: "kucingapes@gmail.com"
+          justlogin: true
+      - name: Add heroku remote
+        run: heroku git:remote --app=demo-aej
+      - name: Setup heroku env
+        run: heroku config:set DATABASE_URl=${{secrets.DATABASE_URL}}
+      - name: push heroku to master
+        run: git push heroku ${{ github.ref_name }}:master --force
