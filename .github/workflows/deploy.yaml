@@ -22,6 +22,6 @@ jobs:
       - name: Add heroku remote
         run: heroku git:remote --app=demo-aej
       - name: Setup heroku env
-        run: heroku config:set DATABASE_URl=${{secrets.DATABASE_URL}}
+        run: heroku config:set DATABASE_URL=${{secrets.DATABASE_URL}}
       - name: push heroku to master
         run: git push heroku ${{ github.ref_name }}:master --force
